@@ -16,7 +16,7 @@ public class CartController {
     private CartRepository cartRepository;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public Cart addItem(@PathVariable("id") Integer id, @RequestBody Item item) {
+    public Cart addItem(@PathVariable("id") Long id, @RequestBody Item item) {
         Optional<Cart> savedCart = cartRepository.findById(id);
         Cart cart;
         if (savedCart.equals(Optional.empty())) {
@@ -30,13 +30,12 @@ public class CartController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Optional<Cart> findById(@PathVariable("id") Integer id) {
+    public Optional<Cart> findById(@PathVariable("id") Long id) {
         return cartRepository.findById(id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void clear(@PathVariable("id") Integer id) {
+    public void clear(@PathVariable("id") Long id) {
         cartRepository.deleteById(id);
     }
-
 }

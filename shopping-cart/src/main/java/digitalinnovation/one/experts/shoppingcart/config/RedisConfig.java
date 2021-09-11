@@ -24,6 +24,4 @@ public class RedisConfig {
         template.setConnectionFactory(jedisConnectionFactory());
         return template;
     }
-
-
 }

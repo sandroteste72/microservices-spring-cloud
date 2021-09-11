@@ -10,21 +10,21 @@ import java.util.List;
 public class Cart {
 
     @Id
-    private Integer id;
+    private Long id;
     private List<Item> items;
 
     public Cart() {
     }
 
-    public Cart(Integer id) {
+    public Cart(Long id) {
         this.id = id;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

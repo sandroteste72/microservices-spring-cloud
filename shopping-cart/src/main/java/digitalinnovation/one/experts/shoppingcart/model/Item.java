@@ -5,14 +5,14 @@ import org.springframework.data.redis.core.RedisHash;
 @RedisHash("item")
 public class Item {
 
-    private Integer productId;
+    private Long productId;
     private Integer amount;
 
-    public Integer getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(Integer productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 
