@@ -1,4 +1,4 @@
-package digitalinnovation.one.experts.shoppingcart;
+package com.arpitech.solutions.shoppingcart;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

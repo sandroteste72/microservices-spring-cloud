@@ -1,4 +1,4 @@
-package digitalinnovation.one.experts.shoppingcart.config;
+package com.arpitech.solutions.shoppingcart.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,4 +24,6 @@ public class RedisConfig {
         template.setConnectionFactory(jedisConnectionFactory());
         return template;
     }
+
+
 }

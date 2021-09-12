@@ -1,4 +1,4 @@
-package digitalinnovation.one.experts.shoppingcart.model;
+package com.arpitech.solutions.shoppingcart.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
@@ -10,21 +10,21 @@ import java.util.List;
 public class Cart {
 
     @Id
-    private Long id;
+    private Integer id;
     private List<Item> items;
 
     public Cart() {
     }
 
-    public Cart(Long id) {
+    public Cart(Integer id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

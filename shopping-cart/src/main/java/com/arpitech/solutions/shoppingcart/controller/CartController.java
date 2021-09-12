@@ -1,8 +1,8 @@
-package digitalinnovation.one.experts.shoppingcart.controller;
+package com.arpitech.solutions.shoppingcart.controller;
 
-import digitalinnovation.one.experts.shoppingcart.model.Cart;
-import digitalinnovation.one.experts.shoppingcart.model.Item;
-import digitalinnovation.one.experts.shoppingcart.repository.CartRepository;
+import com.arpitech.solutions.shoppingcart.model.Cart;
+import com.arpitech.solutions.shoppingcart.model.Item;
+import com.arpitech.solutions.shoppingcart.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,13 +16,12 @@ public class CartController {
     private CartRepository cartRepository;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public Cart addItem(@PathVariable("id") Long id, @RequestBody Item item) {
+    public Cart addItem(@PathVariable("id") Integer id, @RequestBody Item item) {
         Optional<Cart> savedCart = cartRepository.findById(id);
         Cart cart;
         if (savedCart.equals(Optional.empty())) {
             cart = new Cart(id);
-        }
-        else {
+        } else {
             cart = savedCart.get();
         }
         cart.getItems().add(item);
@@ -30,12 +29,13 @@ public class CartController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Optional<Cart> findById(@PathVariable("id") Long id) {
+    public Optional<Cart> findById(@PathVariable("id") Integer id) {
         return cartRepository.findById(id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void clear(@PathVariable("id") Long id) {
+    public void clear(@PathVariable("id") Integer id) {
         cartRepository.deleteById(id);
     }
+
 }

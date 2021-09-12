@@ -1,4 +1,4 @@
-package digitalinnovation.one.experts.shoppingcart;
+package com.arpitech.solutions.shoppingcart;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
